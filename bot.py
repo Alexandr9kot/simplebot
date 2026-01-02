@@ -12,6 +12,7 @@ logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s',
 async def start_bot(update, context):
     print(update)
     mytext = """Привет {} Я простой бот имею только команду {}""".format(update.message.chat.first_name, '/start')
+    logging.info(f'Пользователь {update.message.chat.username}')
     await update.message.reply_text(mytext)
 
 
